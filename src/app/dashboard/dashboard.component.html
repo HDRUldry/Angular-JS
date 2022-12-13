@@ -1,1 +1,15 @@
-<p>dashboard works!</p>
+<h1>Pokemon les plus recherché !</h1>
+
+<div>
+<ul>
+
+    <li *ngFor="let hero of heros">
+        <a [routerLink]="['/hero',hero.id]">
+
+        <span class="id">{{hero.id}}</span>
+        <span class="name">{{hero.name}}</span>
+
+        </a>
+    </li>
+</ul>
+</div>

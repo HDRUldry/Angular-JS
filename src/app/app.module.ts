@@ -3,18 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { DetailsComponent } from './details/details.component';
-import { ModelsComponent } from './models/models.component';
-import { ServicesComponent } from './services/services.component';
+import { DetailsHeroComponent } from './details-hero/details-hero.component';
+import { ItemHerosComponent } from './heroes/item-heros/item-heros.component';
+//import { HeroComponent } from './services/hero/hero.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeroesComponent,
     DashboardComponent,
-    DetailsComponent,
-    ModelsComponent,
-    ServicesComponent
+    DetailsHeroComponent,
+    ItemHerosComponent,
+    //HeroComponent
   ],
   imports: [
     BrowserModule,
