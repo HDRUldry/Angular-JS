@@ -1,40 +1,51 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { hero } from '../models/hero';
+import { environment } from 'src/environments/environments';
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
 
-  hero: hero[] = [
-    { id: 1, name: "Bulbizarre" },
-    { id: 2, name: "Herbizarre" },
-    { id: 3, name: "Florizarre" },
-    { id: 4, name: "Salameche" },
-    { id: 5, name: "Reptincel" },
-    { id: 5, name: "Dracaufeu" },
-    { id: 5, name: "Carapuce" },
-    { id: 5, name: "Carabaffe" },
-    { id: 5, name: "Tortank" },
-  ];
+   constructor(private httpCLient: HttpClient) { }
 
-  constructor() { }
+// Affiche tout les Pokemon (liste)
 
-  getHeroes(): hero[] {
+  getHeroes(): Observable<hero[]>{
 
-    return this.hero;
+    const headers= new HttpHeaders().set("apikey",environment.api.key)
+  return this.httpCLient.get<hero[]>(environment.api.url+'Pokemon',{'headers':headers})
+
+    // return this.headers;
 
   }
 
-  getTopHeroes(): hero[]{
+//Top heros s'affiche sur le dashboard
 
-    return this.hero.slice(0,40);
+  getTopHeroes(): Observable<hero[]>{
+
+    const headers= new HttpHeaders().set("apikey",environment.api.key).set("Range","0-3")
+  return this.httpCLient.get<hero[]>(environment.api.url+'Pokemon',{'headers':headers})
+
+    // return this.headers.slice(0,40);
   }
 
-getHero(id: number): hero | undefined {
-return this.hero.find(
-  (h: hero) => h.id == id
-);
+getHero(id: number): Observable<hero[]>{
 
+  const headers= new HttpHeaders().set("apikey",environment.api.key)
+return this.httpCLient.get<hero[]>(environment.api.url+'Pokemon',{'headers':headers})
+// return this.headers.find(
+//   (h: hero) => h.id == id
+;
+
+}
+
+getTable(): Observable<hero[]>{
+
+  const headers= new HttpHeaders().set("apikey",environment.api.key)
+return this.httpCLient.get<hero[]>(environment.api.url+'Pokemon',{'headers':headers}
+)
 }
 
 }
