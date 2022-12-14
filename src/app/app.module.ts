@@ -5,9 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { DetailsHeroComponent } from './details-hero/details-hero.component';
 import { ItemHerosComponent } from './heroes/item-heros/item-heros.component';
-//import { HeroComponent } from './services/hero/hero.component';
+import { LayoutComponent } from './layout/layout.component';
+import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormLoginComponent } from './login/form-login/form-login.component';
+import { DetailsHeroComponent } from './details-hero/details-hero.component';
+import { RegisterComponent } from './register/register.component';
+import { FromRegisterComponent } from './register/from-register/from-register.component';
+import { BackofficeComponent } from './protected/backoffice/backoffice.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +22,18 @@ import { ItemHerosComponent } from './heroes/item-heros/item-heros.component';
     DashboardComponent,
     DetailsHeroComponent,
     ItemHerosComponent,
-    //HeroComponent
+    LayoutComponent,
+    LoginComponent,
+    FormLoginComponent,
+    RegisterComponent,
+    FromRegisterComponent,
+    BackofficeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

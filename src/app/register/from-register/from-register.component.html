@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row justify-content-center">
+    <div class="col-4">
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+         
+<!-- Prénom -->
+
+<div class="form-group">
+                <label for="name">Name</label>
+                <input type="name" formControlName="name" class="form-control" id="name" placeholder="Name">
+</div>
+  
+<!-- Nom -->
+
+<div class="form-group">
+    <label for="surname">Surname</label>
+    <input type="surname" formControlName="surname" class="form-control" id="surname" placeholder="Surname">
+</div>
+         
+<!-- Email -->        
+            <label for="email">Email</label>
+          <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+<div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">
+    <div *ngIf="registerForm.controls['email'].errors?.['required']">
+        Please enter an e-mail.
+        </div>
+    <div *ngIf="registerForm.controls['email'].errors?.['email']">
+        Please enter a valid e-mail.
+    </div>
+</div>
+
+<!-- Password -->
+
+<div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password">
+</div>
+
+<!-- Password confirmation -->
+
+<div class="form-group">
+    <label for="confirmPassword">Confirm password</label>
+    <input type="confirmPassword" formControlName="confirmPassword" class="form-control" id="confirmPassword" placeholder="confirmPassword">
+</div>
+
+        <button type="submit" [disabled]="!registerForm.valid" class="btn btn-danger">Register</button>
+      </form>
+    </div>
+    </div>
+    </div>
+    

@@ -15,7 +15,7 @@ export class HeroService {
   getHeroes(): Observable<hero[]>{
 
     const headers= new HttpHeaders().set("apikey",environment.api.key)
-  return this.httpCLient.get<hero[]>(environment.api.url+'Pokemon',{'headers':headers})
+  return this.httpCLient.get<hero[]>(environment.api.urlRest+'Pokemon',{'headers':headers})
 
     // return this.headers;
 
@@ -26,7 +26,7 @@ export class HeroService {
   getTopHeroes(): Observable<hero[]>{
 
     const headers= new HttpHeaders().set("apikey",environment.api.key).set("Range","0-3")
-  return this.httpCLient.get<hero[]>(environment.api.url+'Pokemon',{'headers':headers})
+  return this.httpCLient.get<hero[]>(environment.api.urlRest+'Pokemon',{'headers':headers})
 
     // return this.headers.slice(0,40);
   }
@@ -34,7 +34,7 @@ export class HeroService {
 getHero(id: number): Observable<hero[]>{
 
   const headers= new HttpHeaders().set("apikey",environment.api.key)
-return this.httpCLient.get<hero[]>(environment.api.url+'Pokemon',{'headers':headers})
+return this.httpCLient.get<hero[]>(environment.api.urlRest+'Pokemon?id=eq.'+id+'&select=*',{'headers':headers})
 // return this.headers.find(
 //   (h: hero) => h.id == id
 ;
@@ -44,7 +44,7 @@ return this.httpCLient.get<hero[]>(environment.api.url+'Pokemon',{'headers':head
 getTable(): Observable<hero[]>{
 
   const headers= new HttpHeaders().set("apikey",environment.api.key)
-return this.httpCLient.get<hero[]>(environment.api.url+'Pokemon',{'headers':headers}
+return this.httpCLient.get<hero[]>(environment.api.urlRest+'Pokemon',{'headers':headers}
 )
 }
 
