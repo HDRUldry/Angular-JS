@@ -1,22 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { hero } from 'src/app/models/hero';
 import { HeroService } from 'src/app/services/hero.service';
 
 @Component({
-  selector: 'app-kanto',
-  templateUrl: './kanto.component.html',
-  styleUrls: ['./kanto.component.scss']
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.scss']
 })
-export class KantoComponent {
+export class EditComponent {
 
   heroes: hero[]=[];
 
   constructor(private heroService: HeroService){
   }
     ngOnInit(): void {
-  this.heroService.getPokemonKanto().subscribe(
+  this.heroService.getAllPokemon().subscribe(
     ((data)=> this.heroes=data)
   );
     }
+
 
 }

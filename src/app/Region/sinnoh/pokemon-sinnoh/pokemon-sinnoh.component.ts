@@ -11,8 +11,9 @@ export class PokemonSinnohComponent {
   @Input() hero: hero={
 
     id:0,
-    name: ''
+    name: '',
+    Element: '',
+    Description: ''
       };
-  
 
 }

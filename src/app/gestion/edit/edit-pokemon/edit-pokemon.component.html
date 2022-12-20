@@ -1,0 +1,18 @@
+<table align =center>
+  <thead>
+      <tr>
+      <th>Apparence</th>
+      <th>Nom</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PHOTO</td>
+      <td><a [routerLink]="['/hero',hero.id]">{{hero.name}}</a></td>
+      <td>{{hero.Element}}</td>
+      <td>{{hero.Description}}</td>
+    </tr>
+  </tbody>
+</table>

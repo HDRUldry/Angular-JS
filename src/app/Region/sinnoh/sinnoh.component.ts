@@ -14,7 +14,7 @@ export class SinnohComponent {
 constructor(private heroService: HeroService){
 }
   ngOnInit(): void {
-this.heroService.getHeroes().subscribe(
+this.heroService.getPokemonSinnoh().subscribe(
   ((data)=> this.heroes=data)
 );
   }

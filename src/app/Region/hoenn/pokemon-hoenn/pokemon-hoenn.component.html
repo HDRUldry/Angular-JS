@@ -1,13 +1,35 @@
-<li >
+<table align =center>
+    <thead>
+      <tr>
+        <th>Apparence</th>
+        <th>Nom</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>PHOTO</td>
+        <td><a [routerLink]="['/hero',hero.id]">{{hero.name}}</a></td>
+        <td>{{hero.Element}}</td>
+        <td>{{hero.Description}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+    
 
-    <div class="div-id">
+
+
+    <!-- <div class="div-id">
          <span class="id">{{hero.id}}</span>
 
-     </div>
+     </div> -->
 
+<!--     
      <a [routerLink]="['/hero',hero.id]">
-         <div class="div-name">
-              <span class="name">{{hero.name}}</span>
-          </div>
-     </a>
- </li>
+        <ol style="list-style-type: circle;" class="div-name">
+            <li class="name">{{hero.name}}</li>
+       </ol>
+     </a> -->
+ 

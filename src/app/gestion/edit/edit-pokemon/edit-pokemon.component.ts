@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { hero } from 'src/app/models/hero';
 
 @Component({
-  selector: 'app-pokemon-hoenn',
-  templateUrl: './pokemon-hoenn.component.html',
-  styleUrls: ['./pokemon-hoenn.component.scss']
+  selector: 'app-edit-pokemon',
+  templateUrl: './edit-pokemon.component.html',
+  styleUrls: ['./edit-pokemon.component.scss']
 })
-export class PokemonHoennComponent {
+export class EditPokemonComponent {
 
   @Input() hero: hero={
 
@@ -15,6 +15,6 @@ export class PokemonHoennComponent {
     Element: '',
     Description: ''
       };
-  
+
 
 }

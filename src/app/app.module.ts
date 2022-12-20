@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormLoginComponent } from './login/form-login/form-login.component';
 import { DetailsHeroComponent } from './details-hero/details-hero.component';
 import { RegisterComponent } from './register/register.component';
@@ -18,6 +18,11 @@ import { HoennComponent } from './Region/hoenn/hoenn.component';
 import { PokemonHoennComponent } from './Region/hoenn/pokemon-hoenn/pokemon-hoenn.component';
 import { SinnohComponent } from './Region/sinnoh/sinnoh.component';
 import { PokemonSinnohComponent } from './Region/sinnoh/pokemon-sinnoh/pokemon-sinnoh.component';
+import { AddPokemonComponent } from './gestion/add-pokemon/add-pokemon.component';
+import { EditPokemonComponent } from './gestion/edit/edit-pokemon/edit-pokemon.component';
+import { GestionComponent } from './gestion/gestion.component';
+import { EditComponent } from './gestion/edit/edit.component';
+import { HomeBOComponent } from './gestion/home-bo/home-bo.component';
 
 
 @NgModule({
@@ -37,12 +42,19 @@ import { PokemonSinnohComponent } from './Region/sinnoh/pokemon-sinnoh/pokemon-s
     PokemonHoennComponent,
     SinnohComponent,
     PokemonSinnohComponent,
+    AddPokemonComponent,
+    EditPokemonComponent,
+    GestionComponent,
+    EditComponent,
+    AppComponent,
+    HomeBOComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

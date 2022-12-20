@@ -14,7 +14,7 @@ export class HoennComponent {
   constructor(private heroService: HeroService){
   }
     ngOnInit(): void {
-  this.heroService.getHeroes().subscribe(
+  this.heroService.getPokemonHoenn().subscribe(
     ((data)=> this.heroes=data)
   );
     }

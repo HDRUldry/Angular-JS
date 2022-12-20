@@ -21,14 +21,14 @@ constructor(private userService: UserService, private router:Router){}
 
 
 onSubmit(){
-
 this.userService.login(this.loginForm.value);
 let credentials = {...this.loginForm.value};
 this.userService.login(credentials).subscribe({
 next : (data) => {
 console.log(data)
+localStorage.setItem('token', data['access_token'])
 this.userService.setLogin();
-this.router.navigateByUrl('/admin')
+this.router.navigateByUrl('/admin/gestion/home-bo')
 }, 
 error: (error) => {
 console.log(error)
