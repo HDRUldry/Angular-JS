@@ -60,12 +60,12 @@ export class HeroService {
   }
 
 
-getTable(): Observable<hero[]>{
+// getTable(): Observable<hero[]>{
 
-  const headers= new HttpHeaders().set("apikey",environment.api.key)
-return this.httpClient.get<hero[]>(environment.api.urlRest+'Pokemon',{'headers':headers}
-)
-}
+//   const headers= new HttpHeaders().set("apikey",environment.api.key)
+// return this.httpClient.get<hero[]>(environment.api.urlRest+'Pokemon',{'headers':headers}
+// )
+// }
 
 addPokemon(credentials: {name?: string | null | undefined, Region?: string | null | undefined, Element?: string | null | undefined, description?: string | null | undefined}): Observable<any> {
 
@@ -81,7 +81,7 @@ addPokemon(credentials: {name?: string | null | undefined, Region?: string | nul
 getHero(id: number): Observable<hero[]>{
 
   const headers= new HttpHeaders().set("apikey",environment.api.key)
-return this.httpClient.get<hero[]>(environment.api.urlRest+'Pokemon?name=eq.'+id+'&select=*',{'headers':headers})
+return this.httpClient.get<hero[]>(environment.api.urlRest+'Pokemon?id=eq.'+id+'&select=*',{'headers':headers})
 // return this.headers.find(
 //   (h: hero) => h.id == id
 ;

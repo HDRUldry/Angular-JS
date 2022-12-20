@@ -8,17 +8,38 @@ import { HeroService } from '../services/hero.service';
   templateUrl: './details-hero.component.html',
   styleUrls: ['./details-hero.component.scss']
 })
-export class DetailsHeroComponent implements OnInit {
 
-  hero: hero | undefined;
+  export class DetailsHeroComponent implements OnInit {
 
-  constructor(private heroService: HeroService, private route: ActivatedRoute){
+    hero: hero | undefined;
+  
+  
+    constructor(private route: ActivatedRoute, private heroService: HeroService) { }
+  
+  
+  
+    ngOnInit(): void {
+  
+      this.getHero();
+  
+    }
+  
+  
+  
+    getHero(): void {
+  
+      const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
+  
+      this.heroService.getHero(id).subscribe((herolist: any) => {
+  
+        if (herolist.length >= 1) {
+  
+          this.hero = herolist[0]
+  
+        }
+      });
+  
+    }
+  
   }
-  ngOnInit(): void {
-    this.route.params.subscribe(
-(params) => this.heroService.getHero(params['id']),
-        
-    )
-  }
-
-}
+  
